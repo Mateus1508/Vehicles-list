@@ -15,7 +15,7 @@ const NewVehicle = () => {
     const onSubmit = (data) => { 
         newCar.push(data);
         localStorage.setItem('newListCars', JSON.stringify(newCar))
-        setNewListCars(newCar);
+        setNewListCars(JSON.stringify(newCar));
          };
 
     useEffect(() => {

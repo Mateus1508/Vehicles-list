@@ -32,7 +32,7 @@ const ListVehicles = () => {
            </section>
            <ListBox>
             {filteredList.map((item,index) => (
-                <ul>
+                <ul key={index}>
                   <h4>Veículo {index + 1}</h4>
                   <li>Marca: {item.marca_nome}</li>
                   <li>Modelo: {item.nome_modelo}</li>
