@@ -5,6 +5,7 @@
 O projeto foi criado utilizando **Vite**. para iniciar deve digitar os seguintes comandos no terminal.
 
 `` npm install ``
+<br>
 `` npm run dev ``
 
 ---
