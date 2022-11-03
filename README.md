@@ -2,8 +2,10 @@
 
 ## Como iniciar a aplicação na máquina ?
 
-O projeto foi criado utilizando **Vite**. para iniciar deve digitar o seguinte comando no terminal.
+O projeto foi criado utilizando **Vite**. para iniciar deve digitar os seguintes comandos no terminal.
 
+`` npm install ``
+<br>
 `` npm run dev ``
 
 ---
