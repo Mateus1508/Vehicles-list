@@ -10,18 +10,19 @@ import { Title } from '../../components/Title/styles';
 const NewVehicle = () => {
     const [newListCars, setNewListCars] = useState([]);
     const { register, handleSubmit } = useForm();
-    let newCar = [...newListCars];
+    let newCar = Object.keys([...newListCars]);
     
     const onSubmit = (data) => { 
         newCar.push(data);
+
         localStorage.setItem('newListCars', JSON.stringify(newCar))
-        setNewListCars(JSON.stringify(newCar));
-         };
+        setNewListCars(newCar);
+    };
 
     useEffect(() => {
         const List = localStorage.getItem('newListCars');
         setNewListCars(JSON.parse(List));
-      }, []);
+    }, []);
     
     return ( 
         <FormContainer>

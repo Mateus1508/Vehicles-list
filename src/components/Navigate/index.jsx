@@ -8,9 +8,9 @@ const Navigate = () => {
 
   return ( 
     <nav>
-    <NavigateBtn onClick={() => navigate('/')}>Início</NavigateBtn>
-    <NavigateBtn onClick={() => navigate('/addnew')}>Novo Veículo</NavigateBtn>
-    <NavigateBtn onClick={() => navigate('/list')}>Lista de Veículos</NavigateBtn>
+      <NavigateBtn onClick={() => navigate("/")}>Início</NavigateBtn>
+      <NavigateBtn onClick={() => navigate("/addnew")}>Novo Veículo</NavigateBtn>
+      <NavigateBtn onClick={() => navigate("/list")}>Lista de Veículos</NavigateBtn>
     </nav>
    );
 }
