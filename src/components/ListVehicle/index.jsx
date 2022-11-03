@@ -4,21 +4,21 @@ import { Container, ListBox } from './styles';
 import api from '../../services/api';
 
 const ListVehicles = () => {
-  const [cars, setCars] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
   const [search, setSearch] = useState("");
 
     useEffect(() => {
       api
           .get("")
           .then((item) => {
-            setCars(item.data);
+            setVehicles(item.data);
           })
           .catch((err) => {
             console.error("ops! ocorreu o erro " + err);
           })
     },[]);
 
-    const filteredList = cars
+    const filteredList = vehicles
       .filter((item) => 
       item.marca_nome.includes(search.toUpperCase()) 
       || item.nome_modelo.includes(search.toUpperCase())

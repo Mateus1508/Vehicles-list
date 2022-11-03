@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import NewVehicle from './pages/NewVehicle';
+import AddVehicle from './pages/AddVehicle';
 import List from './pages/List';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/new" element={<NewVehicle />} />
+      <Route path="/new" element={<AddVehicle />} />
       <Route path="/list" element={<List />} />
     </Routes>
   )
