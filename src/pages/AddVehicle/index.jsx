@@ -12,7 +12,7 @@ const AddVehicle = () => {
     const { register, handleSubmit } = useForm();
     
     const onSubmit = (data) => {
-      let newList = [newListCars];
+      let newList = [];
       newList.push(data);
       setNewListCars(newList);
       localStorage.setItem('newListCars', JSON.stringify(newList));
@@ -61,8 +61,8 @@ const AddVehicle = () => {
                     {newListCars.map((item,index) => (
                             <ul key={item.id}>
                                 <h4>Veículo {index + 1}</h4>
-                                <li>Marca: {item.marca_nome}</li>
                                 <li>Modelo: {item.nome_modelo}</li>
+                                <li>Marca: {item.marca_nome}</li>
                                 <li>Ano: {item.ano}</li>
                                 <li>Combustível: {item.combustivel}</li>
                                 <li>Quantidade de portas: {item.num_portas}</li>
