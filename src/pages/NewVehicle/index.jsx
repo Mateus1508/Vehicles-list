@@ -19,8 +19,8 @@ const NewVehicle = () => {
          };
 
     useEffect(() => {
-        const List = JSON.parse(localStorage.getItem('newListCars'));
-        setNewListCars(List);
+        const List = localStorage.getItem('newListCars');
+        setNewListCars(JSON.parse(List));
       }, []);
     
     return ( 
