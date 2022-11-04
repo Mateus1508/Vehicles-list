@@ -55,9 +55,7 @@ Utilizei o **map** para retornar os dados como uma lista:
               </ul>
             ))}
 ```
-# Problemas
 
-Infelizmente não consegui terminar a parte de persistir os dados na hora de criar devdo a esse erro **Uncaught (in promise) TypeError: newListCars is not iterable**, que não consegui resolver.
 
 
 
