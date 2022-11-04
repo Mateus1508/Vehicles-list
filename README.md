@@ -55,7 +55,37 @@ Utilizei o **map** para retornar os dados como uma lista:
               </ul>
             ))}
 ```
+## Lógica para a página Home
 
+Para os veículos antigos
+``` 
+    const oldVehicles = cars.filter(item => item.ano >= 2005);
+```
+
+---
+Para os veículos em promoção
+```
+    const cheapVehicles = cars.sort((a,b) => {
+      if(a.valor_fipe < b.valor_fipe) {
+        return -1;
+      } else {
+        return true;
+      }
+});
+    const resultCheapVehicles = cheapVehicles.slice(0,3);
+```
+---
+Para os novos veículos
+```
+    const newVehicles = cars.sort((a,b) => {
+      if(a.timestamp_cadastro > b.timestamp_cadastro) {
+        return -1;
+      } else {
+        return true;
+      }
+    });
+    const resultNewVehicles = newVehicles.slice(0,5);
+```
 
 
 
