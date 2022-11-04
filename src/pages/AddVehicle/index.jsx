@@ -8,21 +8,23 @@ import { FormBox, FormContainer, CarsGrid } from './styles';
 import { Title } from '../../components/Title/styles';
 
 const AddVehicle = () => {
-    const [newListCars, setNewListCars] = useState([]);
-    const { register, handleSubmit } = useForm();
-    let newList = newListCars;
-    const onSubmit = (data) => {
-      console.log(data);
-      newList.push(data);
-      setNewListCars(newList);
-      localStorage.setItem('newListCars', JSON.stringify(newList));
-    };
-    
-    useEffect(() => {
-        const List = localStorage.getItem('newListCars');
-        setNewListCars(JSON.parse(List));
-    }, [newListCars]);
-    
+  const [newListCars, setNewListCars] = useState([]);
+  const [update, setupdate] = useState(false);
+  const { register, handleSubmit } = useForm();
+  let newList = newListCars || [];
+
+  const onSubmit = (data) => {
+    newList.push(data);
+    setNewListCars(newList);
+    setupdate(!update);
+    localStorage.setItem("newListCars", JSON.stringify(newList));
+  };
+
+  useEffect(() => {
+    const List = localStorage.getItem("newListCars");
+    setNewListCars(JSON.parse(List));
+  }, [update]);
+
     return ( 
         <FormContainer>
             <Navigate />
@@ -56,24 +58,24 @@ const AddVehicle = () => {
 
                     <DefaultBtn type='submit'>Enviar</DefaultBtn>
                 </FormBox>
-                {newListCars != null ? <CarsGrid>
-                    <h2>Novos veículos</h2>
-                    {newListCars.map((item,index) => (
-                            <ul key={item.id}>
-                                <h4>Veículo {index + 1}</h4>
-                                <li>Modelo: {item.nome_modelo}</li>
-                                <li>Marca: {item.marca_nome}</li>
-                                <li>Ano: {item.ano}</li>
-                                <li>Combustível: {item.combustivel}</li>
-                                <li>Quantidade de portas: {item.num_portas}</li>
-                                <li>Valor Fipe: {item.valor_fipe}</li>
-                                <li>Cor: {item.cor}</li>
-                            </ul>
-                    ))}
-                </CarsGrid>
-                :
-                <></>
-                }
+                {newListCars != null ? 
+                <CarsGrid>
+                  <h2>Novos veículos</h2>
+                  {newList.map((item,index) => (
+                          <ul key={index}>
+                              <h4>Veículo {index + 1}</h4>
+                              <li>Modelo: {item.nome_modelo}</li>
+                              <li>Marca: {item.marca_nome}</li>
+                              <li>Ano: {item.ano}</li>
+                              <li>Combustível: {item.combustivel}</li>
+                              <li>Quantidade de portas: {item.num_portas}</li>
+                              <li>Valor Fipe: {item.valor_fipe}</li>
+                              <li>Cor: {item.cor}</li>
+                          </ul>
+                  ))}
+              </CarsGrid>
+              : <></>  
+              }
             </div>
         </FormContainer>
      );
