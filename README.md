@@ -55,7 +55,7 @@ Utilizei o **map** para retornar os dados como uma lista:
               </ul>
             ))}
 ```
-## Lógica para a página Home
+## Home
 
 Para os veículos antigos
 ``` 
