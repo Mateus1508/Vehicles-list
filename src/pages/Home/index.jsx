@@ -18,7 +18,7 @@ const Home = () => {
           })
         },[]);
 
-    const oldVehicles = cars.filter(item => item.ano >= 2005);
+    const oldVehicles = cars.filter(item => item.ano <= 2005);
 
     const cheapVehicles = cars.sort((a,b) => {
       if(a.valor_fipe < b.valor_fipe) {
